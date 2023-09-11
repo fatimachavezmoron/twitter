@@ -32,14 +32,16 @@ const EditModal = () => {
 
   const onSubmit = useCallback(async () => {
     try {
-      setIsLoading(true);
 
+      setIsLoading(true);
+    
       await axios.patch('/api/edit', { name, username, bio, profileImage, coverImage });
       mutateFetchedUser();
 
       toast.success('Updated');
 
       editModal.onClose();
+     
     } catch (error) {
       toast.error('Something went wrong');
     } finally {
