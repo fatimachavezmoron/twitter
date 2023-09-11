@@ -34,7 +34,7 @@ const EditModal = () => {
     try {
 
       setIsLoading(true);
-    
+
       await axios.patch('/api/edit', { name, username, bio, profileImage, coverImage });
       mutateFetchedUser();
 
@@ -43,6 +43,7 @@ const EditModal = () => {
       editModal.onClose();
      
     } catch (error) {
+      console.error(error); 
       toast.error('Something went wrong');
     } finally {
       setIsLoading(false);
