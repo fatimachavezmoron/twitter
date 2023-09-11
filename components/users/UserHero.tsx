@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import useUser from "@/Hooks/useUser";
+import useUser from "@/hooks/useUser";
 
 import Avatar from "../Avatar"
 

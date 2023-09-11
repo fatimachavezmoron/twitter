@@ -4,7 +4,7 @@ import {BiLogOut} from 'react-icons/bi'
 import SidebarLogo from './SidebarLogo';
 import SidebarItem from './SidebarItem';
 import SidebarTweetButton from './SidebarTweetButton';
-import useCurrentUser from '../../Hooks/useCurrentUser';
+import useCurrentUser from '../../hooks/useCurrentUser';
 import { signOut } from 'next-auth/react';
 
 const Sidebar = () => {
