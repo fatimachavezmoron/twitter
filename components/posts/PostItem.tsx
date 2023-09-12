@@ -15,10 +15,11 @@ const PostItem: React.FC<PostItemProps> = ({data, userId}) => {
   const router = useRouter();
   const loginModal = useLoginModal();
   const {data: currentUser} = useCurrentUser();
+
   const goToUser = useCallback((event: any) => {
     event.stopPropagation();
 
-    router.push(`/users/${data.user.id}`)
+    router.push(`/users/${data.user.id}`);
   }, [router, data.user.id]);
 
   const goToPost = useCallback(() => {
@@ -84,14 +85,16 @@ const PostItem: React.FC<PostItemProps> = ({data, userId}) => {
                 {data.comments?.length || 0}
               </p>
             </div>
-            <div className='flex 
+            <div 
+            onClick={onLike}
+            className='flex 
             flex-row 
             items-center
            text-neutral-500 
             gap-2 
             cursor-pointer 
             transition 
-            hover:text-sky-500
+            hover:text-red-500
             '>
               <AiOutlineHeart size={20}/>
               <p>

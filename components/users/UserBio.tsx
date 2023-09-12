@@ -1,5 +1,6 @@
 import useCurrentUser from '@/hooks/useCurrentUser'
 import useEditModal from '@/hooks/useEditModal';
+import useFollow from '@/hooks/useFollow';
 import useUser from '@/hooks/useUser';
 import {format} from 'date-fns'
 import { useMemo } from 'react';
@@ -15,6 +16,8 @@ const UserBio: React.FC<UserBioProps> = ({userId}) => {
   const {data: fetchedUser} = useUser(userId);
 
   const editModal = useEditModal();
+
+  const { isFollowing, toggleFollow} = useFollow(userId)
 
   const createdAt = useMemo(() => {
     if(!fetchedUser?.createdAt) {
