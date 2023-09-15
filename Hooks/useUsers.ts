@@ -1,7 +1,7 @@
 import useSWR from 'swr';
 import fetcher from '@/libs/fetcher';
 
-const useUsers = () => {
+function useUsers() {
   const { data, error, isLoading, mutate } = useSWR('/api/users', fetcher);
 
   return {
@@ -9,7 +9,7 @@ const useUsers = () => {
     error,
     isLoading,
     mutate
-  }
-};
+  };
+}
 
 export default useUsers;
